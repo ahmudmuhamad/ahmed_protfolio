@@ -6,14 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0070f3">
     <meta name="description" content="AI/ML Engineer Portfolio - Ahmed Muhammad">
-    <link rel="stylesheet" href="build/tailwind.css">
+    <!-- The user's original HTML had a relative path for Tailwind.
+         I'll use the Tailwind CDN script for a self-contained, runnable example. -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <title>Tailwind Portfolio</title>
+    <title>AI/ML Engineer Portfolio - Ahmed Muhammad</title>
+    <!-- Configuration for Tailwind dark mode and custom colors -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // 'media' or 'class'
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0070f3', // Example primary color (blue)
+                        'secondary': '#7928ca', // Example secondary color (purple)
+                        'accent': '#ff0080', // Example accent color (pink)
+                        'dark-background': '#121212',
+                        'dark-background-secondary': '#1e1e1e',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        morph: 'morph 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        morph: {
+                            '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                            '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Simple inline style for the cursor animation (from original script logic) -->
+    <style>
+        .command-text::after {
+            content: '▋';
+            display: inline-block;
+            animation: blink 1s step-end infinite;
+            color: #0070f3; /* Primary color cursor */
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Style for scroll-shadow */
+        header.scrolled {
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+    </style>
 </head>
 
 <body class="font-sans text-gray-900 dark:text-white bg-white dark:bg-dark-background transition-colors duration-300">
@@ -24,7 +72,8 @@
 
     <!-- Header -->
     <header
-        class="fixed w-full top-0 z-50 bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        id="pageHeader"
+        class="fixed w-full top-0 z-50 bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm transition-all duration-300">
         <div class="container mx-auto px-4">
             <nav class="flex justify-between items-center py-4">
                 <div class="flex items-center">
@@ -48,20 +97,26 @@
                         <a href="#projects"
                             class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
                     </li>
+                    <!-- Added Certifications Link -->
+                    <li>
+                        <a href="#certifications"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Certifications</a>
+                    </li>
                     <li>
                         <a href="#contact"
                             class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
                     </li>
                 </ul>
                 <div class="flex items-center space-x-4">
-                    <button id="themeToggle" class="">
+                    <button id="themeToggle" class="p-2">
+                        <!-- Icon will be toggled by JS -->
                         <i class="fa-solid fa-moon text-gray-600 dark:text-gray-400"></i>
                     </button>
                     <button class="md:hidden p-2" id="menuToggle">
                         <div class="w-6 h-5 flex flex-col justify-between">
-                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
-                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
-                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar top-bar"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar middle-bar"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar bottom-bar"></span>
                         </div>
                     </button>
                 </div>
@@ -85,23 +140,28 @@
             <ul class="flex-1 flex flex-col justify-center items-center space-y-8">
                 <li>
                     <a href="#features"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Showcase</a>
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Showcase</a>
                 </li>
                 <li>
-                    <a href="#About"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                    <a href="#about"
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">About</a>
                 </li>
                 <li>
                     <a href="#skills"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Skills</a>
                 </li>
                 <li>
                     <a href="#projects"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Projects</a>
+                </li>
+                 <!-- Added Certifications Link -->
+                <li>
+                    <a href="#certifications"
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Certifications</a>
                 </li>
                 <li>
                     <a href="#contact"
-                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -112,7 +172,7 @@
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                     <span
+                      <span
                         class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">AI/ML
                         Engineer</span> 
                 </h1>
@@ -144,10 +204,8 @@
         </div>
     </section>
 
-</section>
- 
 <section id="features"
-    class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0">
+    class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0 reveal-section">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What's in my Toolkit</h2>
         <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
@@ -200,7 +258,7 @@
 </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
+    <section id="about" class="py-24 translate-y-4 transition-all duration-500 opacity-0 reveal-section">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -223,27 +281,21 @@
                             class="px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10 text-center">
                             Contact Me
                         </a>
-                        <a href="#"
+                        
+                        <!-- UPDATED LINK HERE -->
+                        <a href="../assets/Ahmed_Ahmed_ML_Data_Science_2025.pdf" download
                             class="px-8 py-3 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors text-center">Download
                             Resume</a>
                     </div>
                 </div>
-                <div class="relative">
-                    <div
-                        class="w-72 h-72 mx-auto animate-morph bg-gradient-to-br from-primary via-secondary to-accent rounded-full relative overflow-hidden">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-primary/50 via-secondary/50 to-accent/50 rounded-full blur-2xl animate-morph">
-                        </div>
-                        <img src="../assets/profile-1.png" alt=""
-                            class="absolute inset-0 w-full h-full object-cover z-10">
-                    </div>
+    
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0">
+    <section id="skills" class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0 reveal-section">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My Skills</h2>
             <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">Technologies and tools I use to bring AI/ML products to life</p>
@@ -324,7 +376,7 @@
                     <div class="w-16 h-16 bg-blue-400/10 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-cloud text-blue-400 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Cloud Platforms <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(GCP, AWS, Vertex AI, AutoML)</span></h3>
+                    <h3 class="text-xl font-bold mb-4">Cloud Platforms <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(GCP, AWS)</span></h3>
                     <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
                         <div class="w-[90%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
@@ -367,7 +419,7 @@
 
     
     <!-- Projects Section -->
-    <section id="projects" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
+    <section id="projects" class="py-24 translate-y-4 transition-all duration-500 opacity-0 reveal-section">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Featured Projects</h2>
             <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
@@ -379,7 +431,8 @@
         <div
         class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
         <div class="h-48 relative">
-            <img src="../assets/MedicalBot.png" alt="Medical Chatbot" class="w-full h-full object-cover">
+            <img src="../assets/MedicalBot.png" alt="Medical Chatbot" class="w-full h-full object-cover"
+             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Medical+Chatbot';">
             <div class="absolute inset-0 bg-black/20"></div>
         </div>
         <div class="p-6">
@@ -414,7 +467,8 @@
         <div
             class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <div class="h-48 relative">
-                <img src="../assets/MisrLex.png" alt="RAG Platform" class="w-full h-full object-cover">
+                <img src="../assets/MisrLeX.png" alt="RAG Platform" class="w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=RAG+Platform';">
                 <div class="absolute inset-0 bg-black/20"></div>
             </div>
             <div class="p-6">
@@ -447,46 +501,47 @@
                 </div>
             </div>
         </div>
-  <!-- Project Card 3 -->
-<div
-class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-<div class="h-48 relative">
-    <img src="../assets/customer-segmentation.png" alt="Customer Segmentation" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-black/20"></div>
-</div>
-<div class="p-6">
-    <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
-    <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
-        An end-to-end machine learning system to cluster e-commerce customers using RFM analysis.
-    </p>
-    <div class="flex flex-wrap gap-2 my-6 mt-4">
-        <span
-            class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
-        <span
-            class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
-        <span
-            class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
-        <span
-            class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
-        <span
-            class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
-        <span
-            class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Uvicorn</span>
-        <span
-            class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
-        <span
-            class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
-        
+    <!-- Project Card 3 -->
+    <div
+    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+    <div class="h-48 relative">
+        <img src="../assets/customer-segmentation.png" alt="Customer Segmentation" class="w-full h-full object-cover"
+         onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Customer+Segmentation';">
+        <div class="absolute inset-0 bg-black/20"></div>
     </div>
-    <div class="flex gap-4">
-        <a href="https://github.com/ahmudmuhamad/e2e-customer-segmentation-rfm/tree/main"
-            class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-            <i class="fa-brands fa-github mr-2"></i>
-            Code
-        </a>
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+            An end-to-end machine learning system to cluster e-commerce customers using RFM analysis.
+        </p>
+        <div class="flex flex-wrap gap-2 my-6 mt-4">
+            <span
+                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
+            <span
+                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
+            <span
+                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
+            <span
+                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+            <span
+                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
+            <span
+                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Uvicorn</span>
+            <span
+                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+            <span
+                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
+            
+        </div>
+        <div class="flex gap-4">
+            <a href="https://github.com/ahmudmuhamad/e2e-customer-segmentation-rfm/tree/main"
+                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                <i class="fa-brands fa-github mr-2"></i>
+                Code
+            </a>
+        </div>
     </div>
-</div>
-</div>
+    </div>
             </div>
 
         </div>
@@ -494,7 +549,7 @@ class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hov
 
     
 <!-- Certifications Section -->
-<section id="certifications" class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0">
+<section id="certifications" class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0 reveal-section">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Certifications</h2>
         <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
@@ -552,6 +607,15 @@ class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hov
                     Verify Certificate
                 </a>
             </div>
+
+             <!-- Generative AI -->
+             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
+                <h3 class="text-xl font-bold mb-4">Generative AI With AWS</h3>
+                <a href="https://www.linkedin.com/in/ahmudmuhamad/details/certifications/1749660253344/single-media-viewer/?profileId=ACoAADmcBaABIJAxcHvn75Uprk9xnL9GXRxsf9A" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
+            </div>
+
+
+
         </div>
     </div>
 </section>
@@ -559,7 +623,7 @@ class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hov
 
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 translate-y-4 transition-all duration-500 opacity-0">
+    <section id="contact" class="py-24 translate-y-4 transition-all duration-500 opacity-0 reveal-section">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Get In Touch</h2>
             <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
@@ -606,7 +670,7 @@ class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hov
 
                 <!-- Contact Form -->
                 <div class="lg:col-span-2">
-                    <form id="contactForm" class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg">
+                    <form name="contact" id="contactForm" class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg" data-netlify="true">
                         <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
                         <div class="space-y-6">
                             <div>
@@ -632,6 +696,8 @@ class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hov
                                 Message</button>
                         </div>
                     </form>
+                    <!-- Success/Error Message Box -->
+                    <div id="formMessage" class="mt-4 p-4 rounded-lg text-center hidden"></div>
                 </div>
 
             </div>
@@ -647,7 +713,7 @@ class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hov
                     <span class="text-xl font-extrabold">Ahmed Muhammad</span>
                     <span class="text-primary text-2xl ml-1">●</span>
                 </div>
-                <ul class="flex flex-wrap justify-center gap-6 mb-0">
+                <ul class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
                     <li>
                         <a href="#features"
                             class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Showcase</a>
@@ -664,24 +730,26 @@ class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hov
                         <a href="#projects"
                             class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
                     </li>
+                    <!-- Added Certifications Link -->
+                    <li>
+                        <a href="#certifications"
+                            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Certifications</a>
+                    </li>
                     <li>
                         <a href="#contact"
                             class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
                     </li>
                 </ul>
                 <div class="flex gap-4">
-                    <a href="#"
+                    <a href="https://github.com/ahmudmuhamad"
                         class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                        <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-github text-xl"></i>
                     </a>
-                    <a href="#"
+                    <a href="https://www.linkedin.com/in/ahmudmuhamad/"
                         class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-linkedin text-xl"></i>
                     </a>
-                    <a href="#"
-                        class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
+                    <!-- Removed Twitter as it wasn't in the contact section -->
                 </div>
             </div>
             <div class="text-center text-gray-600 dark:text-gray-400 text-sm">
@@ -690,7 +758,209 @@ class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hov
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-300 hover:bg-blue-600">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- I've embedded the JavaScript logic from script.js here for a single-file solution -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Theme Toggle ---
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+            const html = document.documentElement;
+
+            // On page load, check saved theme or system preference
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                html.classList.remove('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.theme = 'light';
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.theme = 'dark';
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            });
+
+            // --- Mobile Menu ---
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const topBar = document.querySelector('.menu-bar.top-bar');
+            const middleBar = document.querySelector('.menu-bar.middle-bar');
+            const bottomBar = document.querySelector('.menu-bar.bottom-bar');
+
+            const openMenu = () => {
+                mobileMenu.classList.remove('translate-x-full');
+                topBar.style.transform = 'rotate(45deg) translate(5px, 6px)';
+                middleBar.style.opacity = '0';
+                bottomBar.style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            };
+
+            const close = () => {
+                mobileMenu.classList.add('translate-x-full');
+                topBar.style.transform = 'none';
+                middleBar.style.opacity = '1';
+                bottomBar.style.transform = 'none';
+            };
+
+            menuToggle.addEventListener('click', openMenu);
+            closeMenu.addEventListener('click', close);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', close);
+            });
+            
+            // --- Header Scroll Shadow ---
+            const header = document.getElementById('pageHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md', 'dark:shadow-gray-800/20');
+                } else {
+                    header.classList.remove('shadow-md', 'dark:shadow-gray-800/20');
+                }
+            });
+
+            // --- Terminal Typing Effect ---
+            const commandText = document.querySelector('.command-text');
+            const commands = [
+                'loading portfolio...',
+                'initializing components...',
+                'compiling skills matrix...',
+                'deploying projects...',
+                'Welcome',
+            ];
+            let commandIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentCommand = commands[commandIndex];
+                let displayText = '';
+
+                if (isDeleting) {
+                    displayText = currentCommand.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    displayText = currentCommand.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                commandText.textContent = displayText;
+
+                let typeSpeed = isDeleting ? 50 : 100;
+
+                if (!isDeleting && charIndex === currentCommand.length) {
+                    // Pause at end of word
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    commandIndex = (commandIndex + 1) % commands.length;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+            type();
+
+            // --- Reveal on Scroll ---
+            const sections = document.querySelectorAll('.reveal-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-4');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Back to Top Button ---
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                 if (window.scrollY > 300) {
+                    backToTop.classList.remove('opacity-0', 'translate-y-4');
+                    backToTop.classList.add('opacity-100', 'translate-y-0');
+                 } else {
+                    backToTop.classList.remove('opacity-100', 'translate-y-0');
+                    backToTop.classList.add('opacity-0', 'translate-y-4');
+                 }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // --- Contact Form ---
+            // A mock form handler since there's no backend.
+            // This prevents the page reload and shows a message.
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault(); 
+                
+                // Simulate sending
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+
+                setTimeout(() => {
+                    // Simulate success
+                    formMessage.textContent = 'Thank you! Your message has been sent.';
+                    formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'dark:bg-red-900/30', 'dark:text-red-300');
+                    formMessage.classList.add('bg-green-100', 'text-green-700', 'dark:bg-green-900/30', 'dark:text-green-300');
+                    contactForm.reset();
+                    
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+
+                     // Hide the message after 5 seconds
+                    setTimeout(() => {
+                         formMessage.classList.add('hidden');
+                    }, 5000);
+
+                }, 1500);
+
+                // To simulate an error:
+                // setTimeout(() => {
+                //     formMessage.textContent = 'Oops! Something went wrong. Please try again.';
+                //     formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700', 'dark:bg-green-900/30', 'dark:text-green-300');
+                //     formMessage.classList.add('bg-red-100', 'text-red-700', 'dark:bg-red-900/30', 'dark:text-red-300');
+                //     submitButton.disabled = false;
+                //     submitButton.textContent = 'Send Message';
+                // }, 1500);
+            });
+
+        });
+    </script>
 </body>
 
 </html>

@@ -77,36 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Here you would typically send the data to a server
-            // For demo purposs, we'll just log it and show a success message
-            console.log('Form Submitted:', { name, email, message });
-
-            // Show success message
-            const button = contactForm.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            button.textContent = 'Message Sent!';
-
-            // Reset form
-            contactForm.reset();
-
-            // Restore button text after a delay
-            setTimeout(() => {
-                button.textContent = originalText;
-            }, 3000);
-        });
-    }
-
     // Add scroll events for header shadow and reveal animations
     const header = document.querySelector('header');
     const sections = document.querySelectorAll('section');
