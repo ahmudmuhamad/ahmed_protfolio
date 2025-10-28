@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0070f3">
+    <!-- 
+      Page-specific meta tags.
+      Update these as needed for SEO.
+    -->
+    <meta name="description" content="A collection of all projects by Ahmed Muhammad, AI/ML Engineer.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>All Projects - Ahmed Muhammad</title>
+    <!-- Configuration for Tailwind dark mode and custom colors (identical to index.html) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // 'media' or 'class'
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0070f3',
+                        'secondary': '#7928ca',
+                        'accent': '#ff0080',
+                        'dark-background': '#121212',
+                        'dark-background-secondary': '#1e1e1e',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        morph: 'morph 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        morph: {
+                            '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                            '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Style for scroll-shadow (identical to index.html) */
+        header.scrolled {
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        /* Blinking cursor for mobile menu icon (if needed, though not strictly for this page) */
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-900 dark:text-white bg-white dark:bg-dark-background transition-colors duration-300">
+    <!-- Dark mode background gradients (identical to index.html) -->
+    <div class="fixed inset-0 -z-10 opacity-0 dark:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"></div>
+    </div>
+
+    <!-- Header (Simplified navigation for this page) -->
+    <header
+        id="pageHeader"
+        class="fixed w-full top-0 z-50 bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center">
+                    <span class="text-xl font-extrabold">Ahmed Muhammad</span>
+                    <span class="text-primary text-2xl ml-1">●</span>
+                </a>
+                <ul class="hidden md:flex space-x-8">
+                    <li>
+                        <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="font-bold text-primary dark:text-primary transition-colors">Projects</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="p-2">
+                        <!-- Icon will be toggled by JS -->
+                        <i class="fa-solid fa-moon text-gray-600 dark:text-gray-400"></i>
+                    </button>
+                    <button class="md:hidden p-2" id="menuToggle">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar top-bar"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar middle-bar"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar bottom-bar"></span>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Simplified) -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-white dark:bg-dark-background z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="container mx-auto px-4 h-full flex flex-col">
+            <div class="flex justify-between items-center py-4">
+                 <a href="index.html" class="flex items-center">
+                    <span class="text-xl font-extrabold">Ahmed Muhammad</span>
+                    <span class="text-primary text-2xl ml-1">●</span>
+                </a>
+                <button id="closeMenu" class="p-2">
+                    <i class="fa-solid fa-square-xmark text-gray-600 dark:text-gray-400 text-2xl"></i>
+                </button>
+            </div>
+            <ul class="flex-1 flex flex-col justify-center items-center space-y-8">
+                <li>
+                    <a href="index.html" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Home</a>
+                </li>
+                <li>
+                    <a href="#projects" class="text-2xl text-primary dark:text-primary transition-colors mobile-link">Projects</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content: All Projects -->
+    <main id="projects" class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">All Projects</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
+                A collection of my work, experiments, and case studies.
+            </p>
+
+            <!-- 
+              Projects Grid
+              To add a new project, copy one of the <article> blocks below
+              and paste it as a new item in the grid.
+            -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <article
+                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 relative">
+                        <img src="/assets/MedicalBot.png" alt="Medical Chatbot" class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Medical+Chatbot';"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Medical Chatbot</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                            An intelligent medical chatbot powered by fine-tuned models, providing reliable health
+                            information for Arabic Speakers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 my-6">
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine
+                                Tuning</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/ahmudmuhamad/Medicalbot-Application"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project Card 2 -->
+                <article
+                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 relative">
+                        <img src="/assets/MisrLeX.png" alt="RAG Platform" class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=RAG+Platform';"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">MisrLeX</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 h-16">
+                            RAG platform designed for legal document management and question answering, tailored for
+                            Egyptian law.
+                        </p>
+                        <div class="flex flex-wrap gap-2 my-6">
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Streamlit</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PostgreSQL</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">pgvector</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Qdrant</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">OpenAI</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/ahmudmuhamad/MisrLeX"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project Card 3 -->
+                <article
+                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 relative">
+                        <img src="/assets/customer-segmentation.png" alt="Customer Segmentation"
+                            class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Customer+Segmentation';"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                            An end-to-end machine learning system to cluster e-commerce customers using RFM
+                            analysis.
+                        </p>
+                        <div class="flex flex-wrap gap-2 my-6 mt-4">
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Uvicorn</span>
+                            <span
+                                classB="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
+
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/ahmudmuhamad/e2e-customer-segmentation-rfm/tree/main"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Add more project <article> blocks here as needed -->
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer (identical to index.html) -->
+    <footer class="bg-white dark:bg-dark-background-secondary py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <ul class="flex justify-center space-x-6 mb-4">
+                <li><a href="index.html" class="hover:text-primary">Home</a></li>
+                <li><a href="#projects" class="text-primary">Projects</a></li>
+                <li><a href="index.html#contact" class="hover:text-primary">Contact</a></li>
+            </ul>
+            <div class="text-center text-gray-600 dark:text-gray-400 text-sm">
+                <p>&copy; 2025 Ahmed's Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (identical to index.html) -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-300 hover:bg-blue-600">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- 
+      Embedded JavaScript
+      (Simplified from index.html - removed terminal and reveal animations)
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Theme Toggle ---
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+            const html = document.documentElement;
+
+            // On page load, check saved theme or system preference
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                html.classList.remove('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.theme = 'light';
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.theme = 'dark';
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            });
+
+            // --- Mobile Menu ---
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const topBar = document.querySelector('.menu-bar.top-bar');
+            const middleBar = document.querySelector('.menu-bar.middle-bar');
+            const bottomBar = document.querySelector('.menu-bar.bottom-bar');
+
+            const openMenu = () => {
+                mobileMenu.classList.remove('translate-x-full');
+                topBar.style.transform = 'rotate(45deg) translate(5px, 6px)';
+                middleBar.style.opacity = '0';
+                bottomBar.style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            };
+
+            const close = () => {
+                mobileMenu.classList.add('translate-x-full');
+                topBar.style.transform = 'none';
+                middleBar.style.opacity = '1';
+                bottomBar.style.transform = 'none';
+            };
+
+            menuToggle.addEventListener('click', openMenu);
+            closeMenu.addEventListener('click', close);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', close);
+            });
+            
+            // --- Header Scroll Shadow ---
+            const header = document.getElementById('pageHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md', 'dark:shadow-gray-800/20');
+                } else {
+                    header.classList.remove('shadow-md', 'dark:shadow-gray-800/20');
+                }
+            });
+
+            // --- Back to Top Button ---
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                 if (window.scrollY > 300) {
+                    backToTop.classList.remove('opacity-0', 'translate-y-4');
+                    backToTop.classList.add('opacity-100', 'translate-y-0');
+                 } else {
+                    backToTop.classList.remove('opacity-100', 'translate-y-0');
+                    backToTop.classList.add('opacity-0', 'translate-y-4');
+                 }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

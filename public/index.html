@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0070f3">
     <meta name="description" content="AI/ML Engineer Portfolio - Ahmed Muhammad">
-    <!-- The user's original HTML had a relative path for Tailwind.
-         I'll use the Tailwind CDN script for a self-contained, runnable example. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +14,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <title>AI/ML Engineer Portfolio - Ahmed Muhammad</title>
-    <!-- Configuration for Tailwind dark mode and custom colors -->
     <script>
         tailwind.config = {
             darkMode: 'class', // 'media' or 'class'
@@ -34,18 +31,24 @@
                     },
                     animation: {
                         morph: 'morph 8s ease-in-out infinite',
+                        // Added scroll animation
+                        scroll: 'scroll 25s linear infinite',
                     },
                     keyframes: {
                         morph: {
                             '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
                             '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+                        },
+                         // Added keyframes for the scroll animation
+                        scroll: {
+                            'from': { transform: 'translateX(0)' },
+                            'to': { transform: 'translateX(-50%)' },
                         }
                     }
                 }
             }
         }
     </script>
-    <!-- Simple inline style for the cursor animation (from original script logic) -->
     <style>
         .command-text::after {
             content: '▋';
@@ -65,12 +68,10 @@
 </head>
 
 <body class="font-sans text-gray-900 dark:text-white bg-white dark:bg-dark-background transition-colors duration-300">
-    <!-- Dark mode background gradients -->
     <div class="fixed inset-0 -z-10 opacity-0 dark:opacity-100 transition-opacity duration-500 pointer-events-none">
         <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"></div>
     </div>
 
-    <!-- Header -->
     <header
         id="pageHeader"
         class="fixed w-full top-0 z-50 bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm transition-all duration-300">
@@ -96,7 +97,6 @@
                     <li>
                         <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
                     </li>
-                    <!-- Added Certifications Link -->
                     <li>
                         <a href="#certifications" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Certifications</a>
                     </li>
@@ -106,7 +106,6 @@
                 </ul>
                 <div class="flex items-center space-x-4">
                     <button id="themeToggle" class="p-2">
-                        <!-- Icon will be toggled by JS -->
                         <i class="fa-solid fa-moon text-gray-600 dark:text-gray-400"></i>
                     </button>
                     <button class="md:hidden p-2" id="menuToggle">
@@ -121,7 +120,6 @@
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div id="mobileMenu"
         class="fixed inset-0 bg-white dark:bg-dark-background z-50 transform translate-x-full transition-transform duration-300 md:hidden">
         <div class="container mx-auto px-4 h-full flex flex-col">
@@ -150,8 +148,7 @@
                 <li>
                     <a href="#projects" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Projects</a>
                 </li>
-                 <!-- Added Certifications Link -->
-                <li>
+                 <li>
                     <a href="#certifications" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Certifications</a>
                 </li>
                 <li>
@@ -161,7 +158,6 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
@@ -283,12 +279,10 @@
 
 
 
-    <!-- Experience Section -->
-<section id="experience" class="py-24 translate-y-4 transition-all duration-500 opacity-0 reveal-section">
+    <section id="experience" class="py-24 translate-y-4 transition-all duration-500 opacity-0 reveal-section">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Experience</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- STEM Instructor -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg mb-8">
                 <h3 class="text-xl font-bold mb-2">STEM Instructor</h3>
                 <div class="text-primary font-semibold mb-1">iSchool</div>
@@ -298,7 +292,6 @@
                     <li>Mentored students in coding projects, fostering critical thinking and problem-solving skills.</li>
                 </ul>
             </div>
-            <!-- Data Scientist -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg mb-8">
                 <h3 class="text-xl font-bold mb-2">Data Scientist</h3>
                 <div class="text-primary font-semibold mb-1">Singularity Labs</div>
@@ -313,7 +306,6 @@
 </section>
 
 
-    <!-- Skills Section -->
     <section id="skills" class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0 reveal-section">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My Skills</h2>
@@ -437,7 +429,6 @@
 
 
     
-    <!-- Projects Section -->
     <section id="projects" class="py-24 translate-y-4 transition-all duration-500 opacity-0 reveal-section">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Featured Projects</h2>
@@ -445,129 +436,259 @@
                 Check out some of my recent work
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-        <div
-        class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-        <div class="h-48 relative">
-            <img src="/assets/MedicalBot.png" alt="Medical Chatbot" class="w-full h-full object-cover"
-             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Medical+Chatbot';">
-            <div class="absolute inset-0 bg-black/20"></div>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold mb-4">Medical Chatbot</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
-                An intelligent medical chatbot powered by fine-tuned models, providing reliable health information for Arabic Speakers.
-            </p>
-            <div class="flex flex-wrap gap-2 my-6">
-                <span
-                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
-                <span
-                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
-                <span
-                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
-                <span
-                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
-                <span
-                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine Tuning</span>
-                <span
-                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
-            </div>
-            <div class="flex gap-4">
-                <a href="https://github.com/ahmudmuhamad/Medicalbot-Application"
-                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                    <i class="fa-brands fa-github mr-2"></i>
-                    Code
-                </a>
-            </div>
-        </div>
-        </div>
-        <!-- Project Card 2 -->
-        <div
-            class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="h-48 relative">
-                <img src="/assets/MisrLeX.png" alt="RAG Platform" class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=RAG+Platform';">
-                <div class="absolute inset-0 bg-black/20"></div>
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-4">MisrLeX</h3>
-                <p class="text-gray-600 dark:text-gray-400 mb-6 h-16">
-                    RAG platform designed for legal document management and question answering, tailored for Egyptian law.
-                </p>
-                <div class="flex flex-wrap gap-2 my-6">
-                    <span
-                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Streamlit</span>
-                    <span
-                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
-                    <span
-                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PostgreSQL</span>
-                    <span
-                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">pgvector</span>
-                    <span
-                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Qdrant</span>
-                    <span
-                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">OpenAI</span>
-                    <span
-                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
-                </div>
-                <div class="flex gap-4">
-                    <a href="https://github.com/ahmudmuhamad/MisrLeX"
-                        class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                        <i class="fa-brands fa-github mr-2"></i>
-                        Code
-                    </a>
-                </div>
-            </div>
-        </div>
-    <!-- Project Card 3 -->
-    <div
-    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-    <div class="h-48 relative">
-        <img src="/assets/customer-segmentation.png" alt="Customer Segmentation" class="w-full h-full object-cover"
-         onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Customer+Segmentation';">
-        <div class="absolute inset-0 bg-black/20"></div>
-    </div>
-    <div class="p-6">
-        <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
-        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
-            An end-to-end machine learning system to cluster e-commerce customers using RFM analysis.
-        </p>
-        <div class="flex flex-wrap gap-2 my-6 mt-4">
-            <span
-                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
-            <span
-                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
-            <span
-                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
-            <span
-                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
-            <span
-                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
-            <span
-                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Uvicorn</span>
-            <span
-                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
-            <span
-                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
-            
-        </div>
-        <div class="flex gap-4">
-            <a href="https://github.com/ahmudmuhamad/e2e-customer-segmentation-rfm/tree/main"
-                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                <i class="fa-brands fa-github mr-2"></i>
-                Code
-            </a>
-        </div>
-    </div>
-    </div>
-            </div>
+            <div
+                class="group w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div
+                    class="flex gap-8 md:gap-12 md:animate-scroll motion-reduce:animate-none group-hover:pause">
+                    
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="/assets/MedicalBot.png" alt="Medical Chatbot"
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Medical+Chatbot';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Medical Chatbot</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                An intelligent medical chatbot powered by fine-tuned models, providing reliable health
+                                information for Arabic Speakers.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine
+                                    Tuning</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/ahmudmuhamad/Medicalbot-Application"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="/assets/MisrLeX.png" alt="RAG Platform" class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=RAG+Platform';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">MisrLeX</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 h-16">
+                                RAG platform designed for legal document management and question answering, tailored for
+                                Egyptian law.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Streamlit</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PostgreSQL</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">pgvector</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Qdrant</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">OpenAI</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/ahmudmuhamad/MisrLeX"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="/assets/customer-segmentation.png" alt="Customer Segmentation"
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Customer+Segmentation';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                An end-to-end machine learning system to cluster e-commerce customers using RFM
+                                analysis.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6 mt-4">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-60a-400 rounded-full text-sm">Uvicorn</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
 
-        </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/ahmudmuhamad/e2e-customer-segmentation-rfm/tree/main"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="/assets/MedicalBot.png" alt="Medical Chatbot"
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Medical+Chatbot';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Medical Chatbot</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                An intelligent medical chatbot powered by fine-tuned models, providing reliable health
+                                information for Arabic Speakers.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine
+                                    Tuning</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/ahmudmuhamad/Medicalbot-Application"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="/assets/MisrLeX.png" alt="RAG Platform" class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=RAG+Platform';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">MisrLeX</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 h-16">
+                                RAG platform designed for legal document management and question answering, tailored for
+                                Egyptian law.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Streamlit</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PostgreSQL</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">pgvector</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Qdrant</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">OpenAI</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/ahmudmuhamad/MisrLeX"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="/assets/customer-segmentation.png" alt="Customer Segmentation"
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Customer+Segmentation';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                An end-to-end machine learning system to cluster e-commerce customers using RFM
+                                analysis.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6 mt-4">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Uvicorn</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
+
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/ahmudmuhamad/e2e-customer-segmentation-rfm/tree/main"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="projects.html"
+                class="block w-fit mx-auto mt-12 px-8 py-3 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors">
+                View All Projects
+            </a>
+            </div>
     </section>
 
     
-<!-- Certifications Section -->
 <section id="certifications" class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0 reveal-section">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Certifications</h2>
@@ -575,49 +696,41 @@
             Verified certificates and credentials
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- IBM Data Science Certificate -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">IBM Data Science Professional Certificate</h3>
                 <a href="https://www.coursera.org/account/accomplishments/professional-cert/M9HMUD8UDWPJ" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
             </div>
             
-            <!-- Machine Learning Scientist -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">Machine Learning Scientist with Python</h3>
                 <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/995f3968ae782566c311f531e131e3c0e9d7cffa" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
             </div>
 
-            <!-- Thinking Like an Analyst -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">Thinking Like an Analyst</h3>
                 <a href="https://certificates.mavenanalytics.io/b1cdfec3-9a98-439f-a84a-f7649aed2f4c" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
             </div>
 
-            <!-- Microsoft Power BI -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">Microsoft Power BI For Business Intelligence</h3>
                 <a href="https://www.udemy.com/certificate/UC-36b2840e-0b23-4014-8ed2-72bd343b54be/" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
             </div>
 
-            <!-- Practical Multi AI Agents -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">Practical Multi AI Agents and Advanced Use Cases with CrewAI!</h3>
                 <a href="https://learn.deeplearning.ai/accomplishments/c2d3cf22-9e87-4b9f-977e-c171d24e40d4?usp=sharing" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
             </div>
 
-            <!-- Building Code Agents -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">Building Code Agents with Hugging Face smolagents</h3>
                 <a href="https://learn.deeplearning.ai/accomplishments/d8c169a3-ebc1-4ad1-9753-68e38c093023?usp=sharing" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
             </div>
 
-            <!-- SQL For Data Science -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">SQL For Data Science</h3>
                 <a href="https://www.coursera.org/account/accomplishments/certificate/8EMENKGC7DYJ" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
             </div>
 
-            <!-- Huggingface Agents Course -->
             <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">Huggingface Agents Course</h3>
                 <a href="https://www.linkedin.com/in/ahmudmuhamad/details/certifications/1754655096297/single-media-viewer/?profileId=ACoAADmcBaABIJAxcHvn75Uprk9xnL9GXRxsf9A" 
@@ -627,7 +740,6 @@
                 </a>
             </div>
 
-             <!-- Generative AI -->
              <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <h3 class="text-xl font-bold mb-4">Generative AI With AWS</h3>
                 <a href="https://www.linkedin.com/in/ahmudmuhamad/details/certifications/1749660253344/single-media-viewer/?profileId=ACoAADmcBaABIJAxcHvn75Uprk9xnL9GXRxsf9A" target="_blank" class="text-primary hover:underline">Verify Certificate</a>
@@ -641,7 +753,6 @@
 
 
 
-    <!-- Contact Section -->
     <section id="contact" class="py-24 translate-y-4 transition-all duration-500 opacity-0 reveal-section">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Get In Touch</h2>
@@ -650,9 +761,7 @@
             </p>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Contact Info -->
                 <div class="lg:col-span-1 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-6">
-                    <!-- Email -->
                     <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
                         <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fa-solid fa-envelope text-primary text-xl"></i>
@@ -660,7 +769,6 @@
                         <h3 class="text-xl font-bold mb-2">Email</h3>
                         <p class="text-gray-600 dark:text-gray-400">ahmedmuhammadahmud@gmail.com</p>
                     </div>
-                    <!-- Location -->
                     <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
                         <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fa-solid fa-map-location-dot text-primary text-xl"></i>
@@ -668,8 +776,7 @@
                         <h3 class="text-xl font-bold mb-2">Location</h3>
                         <p class="text-gray-600 dark:text-gray-400">Cairo, Egypt</p>
                     </div>
-                    <!-- Social -->
-                      <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
+                    <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
                         <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fa-solid fa-globe text-primary text-xl"></i>
                         </div>
@@ -687,7 +794,6 @@
                       </div>
                 </div>
 
-                <!-- Contact Form -->
                 <div class="lg:col-span-2">
                     <form name="contact" 
                         id="contactForm" 
@@ -704,7 +810,7 @@
                             </div>
                             <div>
                                 <label for="email"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</LAbel>
                                 <input type="email" name="email" id="email" required
                                     class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none">
                             </div>
@@ -719,7 +825,6 @@
                                 Message</button>
                         </div>
                     </form>
-                    <!-- Success/Error Message Box -->
                     <div id="formMessage" class="mt-4 p-4 rounded-lg text-center hidden"></div>
                 </div>
 
@@ -728,7 +833,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-white dark:bg-dark-background-secondary py-8 mt-24">
         <div class="container mx-auto px-4 text-center">
             <ul class="flex justify-center space-x-6 mb-4">
@@ -737,7 +841,6 @@
                 <li><a href="#experience" class="hover:text-primary">Experience</a></li>
                 <li><a href="#skills" class="hover:text-primary">Skills</a></li>
                 <li><a href="#projects" class="hover:text-primary">Projects</a></li>
-                <!-- Added Certifications Link -->
                 <li><a href="#certifications" class="hover:text-primary">Certifications</a></li>
                 <li><a href="#contact" class="hover:text-primary">Contact</a></li>
             </ul>
@@ -747,13 +850,11 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-300 hover:bg-blue-600">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
 
-    <!-- I've embedded the JavaScript logic from script.js here for a single-file solution -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
