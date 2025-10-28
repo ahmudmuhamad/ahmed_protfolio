@@ -10,6 +10,7 @@
       Update these as needed for SEO.
     -->
     <meta name="description" content="A collection of all projects by Ahmed Muhammad, AI/ML Engineer.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,13 +126,85 @@
         </div>
     </div>
 
-    <!-- Main Content: All Projects -->
     <main id="projects" class="pt-24 pb-16">
         <div class="container mx-auto px-4">
             <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">All Projects</h1>
             <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
                 A collection of my work, experiments, and case studies.
             </p>
+
+            <div class="mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
+                    Currently Working On
+                </h2>
+                <div class="max-w-2xl mx-auto">
+                    <article class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden relative">
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium z-10">
+                            In Progress
+                        </div>
+                        
+                        <div class="p-6">
+                            <div class="h-56 relative">
+                                <img src="assets/llm-scratch.png" alt="Building LLM from Scratch" class="w-full h-full object-cover rounded-md"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/700x300/e2e8f0/64748b?text=Building+LLM+from+Scratch';"
+                                    loading="lazy">
+                                <div class="absolute inset-0 bg-black/20"></div>
+                            </div>
+
+                            <div class="animate-pulse">
+                                <div class="h-7 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-3/4 mt-6 mb-4 opacity-0"></div> 
+                                
+                                <div class="space-y-3 mb-6 opacity-0">
+                                    <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                    <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                    <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-5/6"></div>
+                                </div>
+    
+                                <div class="flex flex-wrap gap-2 my-6 opacity-0">
+                                    <div class="h-6 w-20 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                    <div class="h-6 w-24 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                    <div class="h-6 w-16 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                </div>
+                                
+                                <div class="h-8 w-28 bg-gray-200 dark:bg-dark-background-secondary rounded-md opacity-0"></div>
+                            </div>
+    
+                            <div class="absolute inset-0 p-6">
+                                <h3 class="text-xl font-bold mb-4 mt-12 pt-56 text-gray-900 dark:text-white">
+                                    Building an LLM from Scratch
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4 h-24">
+                                    Currently building a complete LLM from the ground up. This project includes planning and coding all components, preparing a dataset, fine-tuning for text classification, and implementing reinforcement learning from human feedback (RLHF).
+                                </p>
+                                <div class="flex flex-wrap gap-2 my-6">
+                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Python</span>
+                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PyTorch</span>
+                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
+                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine Tuning</span>
+                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">RLHF</span>
+                                </div>
+                                
+                                <div class="flex gap-4">
+                                    <a href="#"
+                                        class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                        onclick="event.preventDefault();" aria-disabled="true">
+                                        <i class="fa-brands fa-github mr-2"></i>
+                                        Code (Soon)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+    
+            <!-- DIVIDER -->
+            <hr class="border-gray-200 dark:border-gray-700 my-16">
+    
+            <!-- OTHER PROJECTS SECTION -->
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">
+                Other Projects
+            </h2>
 
             <!-- 
               Projects Grid
@@ -144,7 +217,7 @@
                 <article
                     class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     <div class="h-48 relative">
-                        <img src="/assets/MedicalBot.png" alt="Medical Chatbot" class="w-full h-full object-cover"
+                        <img src="assets/MedicalBot.png" alt="Medical Chatbot" class="w-full h-full object-cover"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Medical+Chatbot';"
                             loading="lazy">
                         <div class="absolute inset-0 bg-black/20"></div>
@@ -180,18 +253,55 @@
                         </div>
                     </div>
                 </article>
-                
+                          <!-- NEW Project Card: Mobica Find -->
+                          <article
+                          class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                          <div class="h-48 relative">
+                              <img src="assets/mobica_find.png" alt="Mobica Find- AI-Powered Product Search System" class="w-full h-full object-cover"
+                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Mobica+Find';"
+                                  loading="lazy">
+                              <div class="absolute inset-0 bg-black/20"></div>
+                          </div>
+                          <div class="p-6">
+                              <h3 class="text-xl font-bold mb-4">Mobica Find - AI Product Search</h3>
+                              <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                  AI-powered search to help sales teams find similar furniture products based on an image or description.
+                              </p>
+                              <div class="flex flex-wrap gap-2 my-6">
+                                  <span
+                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">AI</span>
+                                  <span
+                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Similarity Search</span>
+                                  <span
+                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Multimodal</span>
+                                  <span
+                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">ALIGN</span>
+                                  <span
+                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FAISS</span>
+                                  <span
+                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Vector DB</span>
+                              </div>
+                              <div class="flex gap-4">
+                                  <a href="#"
+                                      class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                      onclick="event.preventDefault();" aria-disabled="true">
+                                      <i class="fa-brands fa-github mr-2"></i>
+                                      Code (Private)
+                                  </a>
+                              </div>
+                          </div>
+                      </article>
                 <!-- Project Card 2 -->
                 <article
                     class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     <div class="h-48 relative">
-                        <img src="/assets/MisrLeX.png" alt="RAG Platform" class="w-full h-full object-cover"
+                        <img src="assets/MisrLeX.png" alt="RAG Platform" class="w-full h-full object-cover"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=RAG+Platform';"
                             loading="lazy">
                         <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">MisrLeX</h3>
+                        <h3 class="text-xl font-bold mb-4">MisrLeX - Egyptian Legal RAG platform</h3>
                         <p class="text-gray-600 dark:text-gray-400 mb-6 h-16">
                             RAG platform designed for legal document management and question answering, tailored for
                             Egyptian law.
@@ -227,14 +337,14 @@
                 <article
                     class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     <div class="h-48 relative">
-                        <img src="/assets/customer-segmentation.png" alt="Customer Segmentation"
+                        <img src="assets/customer-segmentation.png" alt="Customer Segmentation"
                             class="w-full h-full object-cover"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Customer+Segmentation';"
                             loading="lazy">
                         <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
+                        <h3 class="text-xl font-bold mb-4">Customer Segmentation using RFM Analysis</h3>
                         <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
                             An end-to-end machine learning system to cluster e-commerce customers using RFM
                             analysis.
@@ -253,7 +363,7 @@
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Uvicorn</span>
                             <span
-                                classB="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
 
@@ -269,7 +379,111 @@
                     </div>
                 </article>
 
-                <!-- Add more project <article> blocks here as needed -->
+                <!-- Project Card 4: Power BI Dashboard -->
+                <article
+                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 relative">
+                        <img src="assets/adventure_works.png" alt="Power BI Sales Dashboard" class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Power+BI+Dashboard';"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Power BI Sales Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                            Interactive sales performance dashboard, built in Power BI, visualizes key insights through advanced DAX measures and a comprehensive, optimized data model.
+                        </p>
+                        <div class="flex flex-wrap gap-2 my-6">
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Power BI</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">DAX</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data Modeling</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Business Intelligence (BI)</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data Visualization</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiNGYzOTU5ODktODI5Zi00OGNmLWJlN2ItYzMzMzI3NmVjNjQ3IiwidCI6IjJiNzczZDk5LWYyMjktNDcwNC1iNTYyLTVhMzE5ODgzMTc3OSIsImMiOjh9"
+                                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-chart-bar mr-2"></i>
+                                View Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 
+                  "WORK IN PROGRESS" CARD
+                  This card uses a pulse animation to create a "skeleton loader" effect.
+                -->
+                <article
+                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden relative">
+                    <!-- "In Progress" Badge -->
+                    <div class="absolute top-4 right-4 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium z-10">
+                        In Progress
+                    </div>
+                    
+                    <div class="p-6">
+                        <!-- Pulsing Skeleton Content -->
+                        <div class="animate-pulse">
+                            <!-- Image Placeholder -->
+                            <div class="h-48 bg-gray-200 dark:bg-dark-background-secondary rounded-md"></div>
+                            
+                            <!-- Title Placeholder -->
+                            <div class="h-6 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-3/4 mt-6 mb-4"></div>
+                            
+                            <!-- Description Placeholder -->
+                            <div class="space-y-3 mb-6">
+                                <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-5/6"></div>
+                            </div>
+
+                            <!-- Tags Placeholder -->
+                            <div class="flex flex-wrap gap-2 my-6">
+                                <div class="h-6 w-20 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                <div class="h-6 w-24 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                <div class="h-6 w-16 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                            </div>
+                            
+                            <!-- Button Placeholder -->
+                            <div class="h-8 w-28 bg-gray-200 dark:bg-dark-background-secondary rounded-md"></div>
+                        </div>
+
+                        <!-- 
+                          ABSOLUTE OVERLAY (Non-animated)
+                          This sits on top of the skeleton to provide real text.
+                        -->
+                        <div class="absolute inset-0 p-6">
+                            <h3 class="text-xl font-bold mb-4 mt-12 pt-48 text-gray-900 dark:text-white">
+                                New AI Project (Coming Soon)
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                Currently in development. End To End Deep Learning Project Using MLOPS, DVC Pipeline With Deployments Azure And AWS. Stay tuned!
+                            </p>
+                            <!-- You can keep the real tags hidden or show them like this -->
+                            <div class="flex flex-wrap gap-2 my-6 opacity-0">
+                                <!-- These are just for spacing, the skeleton handles the visual -->
+                                <span class="px-3 py-1 rounded-full text-sm">Tag1</span>
+                                <span class="px-3 py-1 rounded-full text-sm">Tag2</span>
+                                <span class="px-3 py-1 rounded-full text-sm">Tag3</span>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <a href="#"
+                                    class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                    onclick="event.preventDefault();" aria-disabled="true">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code (Soon)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
 
             </div>
 
@@ -397,3 +611,4 @@
 </body>
 
 </html>
+

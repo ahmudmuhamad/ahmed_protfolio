@@ -33,7 +33,7 @@
                     animation: {
                         morph: 'morph 8s ease-in-out infinite',
                         // Added scroll animation
-                        scroll: 'scroll 25s linear infinite',
+                        scroll: 'scroll 30s linear infinite', // Increased duration for more items
                     },
                     keyframes: {
                         morph: {
@@ -51,6 +51,48 @@
         }
     </script>
     <style>
+        /* Smoke Cursor Animation */
+        .smoke-particle {
+            position: fixed;
+            /* Center the particle on the cursor */
+            transform: translate(-50%, -50%); 
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+            /* Use a radial gradient for a soft, "smokey" look */
+            background: radial-gradient(circle, 
+                rgba(255, 255, 255, 0.3) 0%,  /* Opaque white center */
+                rgba(255, 255, 255, 0) 70%   /* Transparent edge */
+            );
+            border-radius: 50%;
+            z-index: 9999;
+            /* Use CSS variables set by JS for randomization */
+            animation: smokeFade 1s linear forwards;
+            transform: translate(-50%, -50%) 
+                       rotate(var(--rotate)) 
+                       scale(var(--scale-start, 1));
+        }
+
+        @keyframes smokeFade {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) 
+                           rotate(var(--rotate)) 
+                           scale(var(--scale-start, 1));
+            }
+            100% {
+                opacity: 0;
+                /* Move particle randomly and fade out */
+                transform: translate(
+                    calc(-50% + var(--x-offset)), 
+                    calc(-50% + var(--y-offset))
+                )
+                rotate(var(--rotate))
+                scale(var(--scale-end, 2));
+            }
+        }
         .command-text::after {
             content: '▋';
             display: inline-block;
@@ -318,7 +360,7 @@
                     <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
                         <i class="fab fa-python text-blue-500 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Python <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(Pandas, NumPy, Scikit-learn)</span></h3>
+                    <h3 class="text-xl font-bold mb-4">Python <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(Pandas, NumPy, seaborn, matplotlib)</span></h3>
                     <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
                         <div class="w-[95%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
@@ -328,12 +370,23 @@
                     <div class="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-brain text-red-600 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">ML Frameworks <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(PyTorch, Tensorflow)</span></h3>
+                    <h3 class="text-xl font-bold mb-4">ML & DL <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(PyTorch, Tensorflow, Scikit-learn)</span></h3>
                     <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
                         <div class="w-[90%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
                 </div>
-    
+
+                <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg">
+                    <div class="w-16 h-16 bg-green-600/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-rocket text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">RAPIDS <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(cuDF, cuML)</span></h3>
+                    <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
+                        <div class="w-[85%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+              </div>
+
+
                 <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg">
                     <div class="w-16 h-16 bg-purple-600/10 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-robot text-purple-600 text-3xl"></i>
@@ -358,7 +411,7 @@
                     <div class="w-16 h-16 bg-indigo-500/10 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-calculator text-indigo-500 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Data & Statistical Analysis <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(EDA, Data Modeling)</span></h3>
+                    <h3 class="text-xl font-bold mb-4">Data & Statistical Analysis <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(EDA, Data Modeling, DAX)</span></h3>
                     <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
                         <div class="w-[92%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
@@ -368,7 +421,7 @@
                     <div class="w-16 h-16 bg-green-700/10 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-database text-green-700 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Databases <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(MySQL, MongoDB)</span></h3>
+                    <h3 class="text-xl font-bold mb-4">Relational & Vector Databases <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(MySQL, MongoDB, FAISS, PGVector, Qdrant)</span></h3>
                     <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
                         <div class="w-[87%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
@@ -378,7 +431,7 @@
                     <div class="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-cogs text-yellow-500 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">MLOps & Deployment <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(Docker, MLFlow, Kubeflow, CI/CD)</span></h3>
+                    <h3 class="text-xl font-bold mb-4">MLOps & Deployment <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(Docker, MLFlow, Kubeflow, Github Actions)</span></h3>
                     <div class="w-full h-2 bg-gray-200 dark:bg-dark-background rounded-full overflow-hidden">
                         <div class="w-[89%] h-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                     </div>
@@ -436,12 +489,13 @@
             <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
                 Check out some of my recent work
             </p>
-
+    
             <div
                 class="group w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
                 <div
                     class="flex gap-8 md:gap-12 md:animate-scroll motion-reduce:animate-none group-hover:pause">
                     
+                    <!-- Medical Chatbot Card -->
                     <div
                         class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="h-48 relative">
@@ -457,29 +511,25 @@
                                 information for Arabic Speakers.
                             </p>
                             <div class="flex flex-wrap gap-2 my-6">
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine
-                                    Tuning</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine Tuning</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
                             </div>
                             <div class="flex gap-4">
                                 <a href="https://github.com/ahmudmuhamad/Medicalbot-Application"
-                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-github mr-2"></i>
                                     Code
                                 </a>
                             </div>
                         </div>
                     </div>
+    
+                    <!-- MisrLeX Card -->
                     <div
                         class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="h-48 relative">
@@ -488,36 +538,63 @@
                             <div class="absolute inset-0 bg-black/20"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-4">MisrLeX</h3>
+                            <h3 class="text-xl font-bold mb-4">MisrLeX - Egyptian Legal RAG Platform</h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-6 h-16">
                                 RAG platform designed for legal document management and question answering, tailored for
                                 Egyptian law.
                             </p>
                             <div class="flex flex-wrap gap-2 my-6">
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Streamlit</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PostgreSQL</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">pgvector</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Qdrant</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">OpenAI</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Streamlit</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">pgvector</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Qdrant</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">OpenAI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
                             </div>
                             <div class="flex gap-4">
                                 <a href="https://github.com/ahmudmuhamad/MisrLeX"
-                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-github mr-2"></i>
                                     Code
                                 </a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- NEW Project Card: Mobica Find -->
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="assets/mobica_find.png" alt="Mobica Find- AI-Powered Product Search System"
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Mobica+Find';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Mobica Find - AI Product Search</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                AI-powered search to help sales teams find similar furniture products based on an image or description.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6">
+                               <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">AI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Similarity Search</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Multimodal</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FAISS</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="#"
+                                    class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                    onclick="event.preventDefault();" aria-disabled="true">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code (Private)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Customer Segmentation Card -->
                     <div
                         class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="h-48 relative">
@@ -527,33 +604,25 @@
                             <div class="absolute inset-0 bg-black/20"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
+                            <h3 class="text-xl font-bold mb-4">Customer Segmentation using RFM Analysis</h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
                                 An end-to-end machine learning system to cluster e-commerce customers using RFM
                                 analysis.
                             </p>
                             <div class="flex flex-wrap gap-2 my-6 mt-4">
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-60a-400 rounded-full text-sm">Uvicorn</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
-
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Uvicorn</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
                             </div>
                             <div class="flex gap-4">
                                 <a href="https://github.com/ahmudmuhamad/e2e-customer-segmentation-rfm/tree/main"
-                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-github mr-2"></i>
                                     Code
                                 </a>
@@ -561,6 +630,38 @@
                         </div>
                     </div>
                     
+                    <!-- Power BI Dashboard Card -->
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="assets/adventure_works.png" alt="Power BI Sales Dashboard"
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Power+BI+Dashboard';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Power BI Sales Dashboard</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                An interactive sales performance dashboard, built in Power BI, visualizes key insights through advanced DAX measures.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Power BI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">DAX</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data Modeling</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Business Intelligence (BI)</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data Visualization</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiNGYzOTU5ODktODI5Zi00OGNmLWJlN2ItYzMzMzI3NmVjNjQ3IiwidCI6IjJiNzczZDk5LWYyMjktNDcwNC1iNTYyLTVhMzE5ODgzMTc3OSIsImMiOjh9"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-chart-bar mr-2"></i>
+                                    View Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Duplicated Cards for infinite scroll effect -->
                     <div
                         class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="h-48 relative">
@@ -576,23 +677,17 @@
                                 information for Arabic Speakers.
                             </p>
                             <div class="flex flex-wrap gap-2 my-6">
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine
-                                    Tuning</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">HTML5</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CSS3</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">JavaScript</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine Tuning</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Node.js</span>
                             </div>
                             <div class="flex gap-4">
-                                <a href="https://github.com/ahmudmuhamad/Medicalbot-Application"
-                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                 <a href="https://github.com/ahmudmuhamad/Medicalbot-Application"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-github mr-2"></i>
                                     Code
                                 </a>
@@ -613,31 +708,58 @@
                                 Egyptian law.
                             </p>
                             <div class="flex flex-wrap gap-2 my-6">
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Streamlit</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PostgreSQL</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">pgvector</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Qdrant</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">OpenAI</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Streamlit</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">pgvector</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Qdrant</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">OpenAI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
                             </div>
                             <div class="flex gap-4">
                                 <a href="https://github.com/ahmudmuhamad/MisrLeX"
-                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-github mr-2"></i>
                                     Code
                                 </a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- NEW Duplicated Project Card: Mobica Find -->
                     <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="http://googleusercontent.com/image_generation_content/0" alt="Mobica Find- AI-Powered Product Search System"
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Mobica+Find';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Mobica Find - AI Product Search</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                AI-powered search to help sales teams find similar furniture products based on an image or description.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6">
+                               <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">AI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Similarity Search</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Multimodal</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FAISS</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="#"
+                                    class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                    onclick="event.preventDefault();" aria-disabled="true">
+                                    <i class="fa-brands fa-github mr-2"></i>
+                                    Code (Private)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicated Customer Segmentation Card -->
+                     <div
                         class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="h-48 relative">
                             <img src="assets/customer-segmentation.png" alt="Customer Segmentation"
@@ -646,48 +768,68 @@
                             <div class="absolute inset-0 bg-black/20"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-4">Customer Segmentation</h3>
+                            <h3 class="text-xl font-bold mb-4">Customer Segmentation using RFM Analysis</h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
                                 An end-to-end machine learning system to cluster e-commerce customers using RFM
                                 analysis.
                             </p>
                             <div class="flex flex-wrap gap-2 my-6 mt-4">
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pydantic</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Uvicorn</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Makefile</span>
-
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Pandas</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">NumPy</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Scikit-learn</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FastAPI</span>
                             </div>
                             <div class="flex gap-4">
                                 <a href="https://github.com/ahmudmuhamad/e2e-customer-segmentation-rfm/tree/main"
-                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    target="_blank" rel="noopener noreferrer">
                                     <i class="fa-brands fa-github mr-2"></i>
                                     Code
                                 </a>
                             </div>
                         </div>
                     </div>
-
+                    
+                    <!-- Duplicated Power BI Dashboard Card -->
+                    <div
+                        class="flex-shrink-0 w-full sm:w-96 bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 relative">
+                            <img src="assets/adventure_works.png" alt="Power BI Sales Dashboard"
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Power+BI+Dashboard';">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Power BI Sales Dashboard</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                                An interactive sales performance dashboard, built in Power BI, visualizes key insights through advanced DAX measures.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-6">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Power BI</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">DAX</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data Modeling</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiNGYzOTU5ODktODI5Zi00OGNmLWJlN2ItYzMzMzI3NmVjNjQ3IiwidCI6IjJiNzczZDk5LWYyMjktNDcwNC1iNTYyLTVhMzE5ODgzMTc3OSIsImMiOjh9"
+                                    class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-chart-bar mr-2"></i>
+                                    View Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
             </div>
             <a href="projects.html"
                 class="block w-fit mx-auto mt-12 px-8 py-3 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors">
                 View All Projects
             </a>
-            </div>
+        </div>
     </section>
+
+
+
 
     
 <section id="certifications" class="py-24 bg-gray-50 dark:bg-dark-background-secondary translate-y-4 transition-all duration-500 opacity-0 reveal-section">
@@ -1008,7 +1150,44 @@
                     behavior: 'smooth'
                 });
 
+            // --- Smoke Cursor Effect ---
+            let smokeThrottle = false;
+            document.addEventListener('mousemove', (e) => {
+                // Throttle to prevent lagging the browser
+                if (smokeThrottle) return;
+                smokeThrottle = true;
 
+                const particle = document.createElement('div');
+                particle.classList.add('smoke-particle');
+                document.body.appendChild(particle);
+
+                // Set initial position
+                particle.style.left = e.clientX + 'px';
+                particle.style.top = e.clientY + 'px';
+
+                // Set random CSS variables for the animation
+                const xOffset = (Math.random() - 0.5) * 150; // Horizontal spread
+                const yOffset = (Math.random() - 0.5) * 150 - 50; // Vertical spread (drifts up)
+                const scaleStart = Math.random() * 0.5 + 0.5; // Random start size
+                const scaleEnd = Math.random() * 2 + 1; // Random end size
+                const rotation = Math.random() * 360;
+
+                particle.style.setProperty('--x-offset', xOffset + 'px');
+                particle.style.setProperty('--y-offset', yOffset + 'px');
+                particle.style.setProperty('--scale-start', scaleStart);
+                particle.style.setProperty('--scale-end', scaleEnd);
+                particle.style.setProperty('--rotate', rotation + 'deg');
+
+                // Remove the particle from the DOM after the animation (1s)
+                setTimeout(() => {
+                    particle.remove();
+                }, 1000);
+
+                // Reset the throttle (allow a new particle every 50ms)
+                setTimeout(() => {
+                    smokeThrottle = false;
+                }, 50);
+            });
                 // To simulate an error:
                 // setTimeout(() => {
                 //     formMessage.textContent = 'Oops! Something went wrong. Please try again.';
