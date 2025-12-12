@@ -51,12 +51,20 @@
     <style>
         /* Style for scroll-shadow (identical to index.html) */
         header.scrolled {
-             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
+
         /* Blinking cursor for mobile menu icon (if needed, though not strictly for this page) */
         @keyframes blink {
-            from, to { opacity: 1; }
-            50% { opacity: 0; }
+
+            from,
+            to {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -68,8 +76,7 @@
     </div>
 
     <!-- Header (Simplified navigation for this page) -->
-    <header
-        id="pageHeader"
+    <header id="pageHeader"
         class="fixed w-full top-0 z-50 bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm transition-all duration-300">
         <div class="container mx-auto px-4">
             <nav class="flex justify-between items-center py-4">
@@ -79,10 +86,12 @@
                 </a>
                 <ul class="hidden md:flex space-x-8">
                     <li>
-                        <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Home</a>
+                        <a href="index.html"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Home</a>
                     </li>
                     <li>
-                        <a href="#projects" class="font-bold text-primary dark:text-primary transition-colors">Projects</a>
+                        <a href="#projects"
+                            class="font-bold text-primary dark:text-primary transition-colors">Projects</a>
                     </li>
                 </ul>
                 <div class="flex items-center space-x-4">
@@ -92,9 +101,12 @@
                     </button>
                     <button class="md:hidden p-2" id="menuToggle">
                         <div class="w-6 h-5 flex flex-col justify-between">
-                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar top-bar"></span>
-                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar middle-bar"></span>
-                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar bottom-bar"></span>
+                            <span
+                                class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar top-bar"></span>
+                            <span
+                                class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar middle-bar"></span>
+                            <span
+                                class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all menu-bar bottom-bar"></span>
                         </div>
                     </button>
                 </div>
@@ -107,7 +119,7 @@
         class="fixed inset-0 bg-white dark:bg-dark-background z-50 transform translate-x-full transition-transform duration-300 md:hidden">
         <div class="container mx-auto px-4 h-full flex flex-col">
             <div class="flex justify-between items-center py-4">
-                 <a href="index.html" class="flex items-center">
+                <a href="index.html" class="flex items-center">
                     <span class="text-xl font-extrabold">Ahmed Muhammad</span>
                     <span class="text-primary text-2xl ml-1">●</span>
                 </a>
@@ -117,10 +129,12 @@
             </div>
             <ul class="flex-1 flex flex-col justify-center items-center space-y-8">
                 <li>
-                    <a href="index.html" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Home</a>
+                    <a href="index.html"
+                        class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors mobile-link">Home</a>
                 </li>
                 <li>
-                    <a href="#projects" class="text-2xl text-primary dark:text-primary transition-colors mobile-link">Projects</a>
+                    <a href="#projects"
+                        class="text-2xl text-primary dark:text-primary transition-colors mobile-link">Projects</a>
                 </li>
             </ul>
         </div>
@@ -139,51 +153,69 @@
                 </h2>
                 <div class="max-w-2xl mx-auto">
                     <article class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden relative">
-                        <div class="absolute top-4 right-4 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium z-10">
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium z-10">
                             In Progress
                         </div>
-                        
+
                         <div class="p-6">
                             <div class="h-56 relative">
-                                <img src="assets/llm-scratch.png" alt="Building LLM from Scratch" class="w-full h-full object-cover rounded-md"
+                                <img src="assets/llm-scratch.png" alt="Building LLM from Scratch"
+                                    class="w-full h-full object-cover rounded-md"
                                     onerror="this.onerror=null;this.src='https://placehold.co/700x300/e2e8f0/64748b?text=Building+LLM+from+Scratch';"
                                     loading="lazy">
                                 <div class="absolute inset-0 bg-black/20"></div>
                             </div>
 
                             <div class="animate-pulse">
-                                <div class="h-7 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-3/4 mt-6 mb-4 opacity-0"></div> 
-                                
+                                <div
+                                    class="h-7 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-3/4 mt-6 mb-4 opacity-0">
+                                </div>
+
                                 <div class="space-y-3 mb-6 opacity-0">
                                     <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
                                     <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
-                                    <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-5/6"></div>
+                                    <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-5/6">
+                                    </div>
                                 </div>
-    
+
                                 <div class="flex flex-wrap gap-2 my-6 opacity-0">
-                                    <div class="h-6 w-20 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
-                                    <div class="h-6 w-24 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
-                                    <div class="h-6 w-16 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
+                                    <div class="h-6 w-20 bg-gray-200 dark:bg-dark-background-secondary rounded-full">
+                                    </div>
+                                    <div class="h-6 w-24 bg-gray-200 dark:bg-dark-background-secondary rounded-full">
+                                    </div>
+                                    <div class="h-6 w-16 bg-gray-200 dark:bg-dark-background-secondary rounded-full">
+                                    </div>
                                 </div>
-                                
-                                <div class="h-8 w-28 bg-gray-200 dark:bg-dark-background-secondary rounded-md opacity-0"></div>
+
+                                <div
+                                    class="h-8 w-28 bg-gray-200 dark:bg-dark-background-secondary rounded-md opacity-0">
+                                </div>
                             </div>
-    
+
                             <div class="absolute inset-0 p-6">
                                 <h3 class="text-xl font-bold mb-4 mt-12 pt-56 text-gray-900 dark:text-white">
                                     Building an LLM from Scratch
                                 </h3>
                                 <p class="text-gray-600 dark:text-gray-400 mb-4 h-24">
-                                    Currently building a complete LLM from the ground up. This project includes planning and coding all components, preparing a dataset, fine-tuning for text classification, and implementing reinforcement learning from human feedback (RLHF).
+                                    Currently building a complete LLM from the ground up. This project includes planning
+                                    and coding all components, preparing a dataset, fine-tuning for text classification,
+                                    and implementing reinforcement learning from human feedback (RLHF).
                                 </p>
                                 <div class="flex flex-wrap gap-2 my-6">
-                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Python</span>
-                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PyTorch</span>
-                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
-                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine Tuning</span>
-                                    <span class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">RLHF</span>
+                                    <span
+                                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Python</span>
+                                    <span
+                                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">PyTorch</span>
+                                    <span
+                                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">LLMs</span>
+                                    <span
+                                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Fine
+                                        Tuning</span>
+                                    <span
+                                        class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">RLHF</span>
                                 </div>
-                                
+
                                 <div class="flex gap-4">
                                     <a href="#"
                                         class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
@@ -197,10 +229,10 @@
                     </article>
                 </div>
             </div>
-    
+
             <!-- DIVIDER -->
             <hr class="border-gray-200 dark:border-gray-700 my-16">
-    
+
             <!-- OTHER PROJECTS SECTION -->
             <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">
                 Other Projects
@@ -212,7 +244,7 @@
               and paste it as a new item in the grid.
             -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
+
                 <!-- Project Card 1 -->
                 <article
                     class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -253,49 +285,52 @@
                         </div>
                     </div>
                 </article>
-                          <!-- NEW Project Card: Mobica Find -->
-                          <article
-                          class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                          <div class="h-48 relative">
-                              <img src="assets/mobica_find.png" alt="Mobica Find- AI-Powered Product Search System" class="w-full h-full object-cover"
-                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Mobica+Find';"
-                                  loading="lazy">
-                              <div class="absolute inset-0 bg-black/20"></div>
-                          </div>
-                          <div class="p-6">
-                              <h3 class="text-xl font-bold mb-4">Mobica Find - AI Product Search</h3>
-                              <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
-                                  AI-powered search to help sales teams find similar furniture products based on an image or description.
-                              </p>
-                              <div class="flex flex-wrap gap-2 my-6">
-                                  <span
-                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">AI</span>
-                                  <span
-                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Similarity Search</span>
-                                  <span
-                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Multimodal</span>
-                                  <span
-                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">ALIGN</span>
-                                  <span
-                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FAISS</span>
-                                  <span
-                                      class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Vector DB</span>
-                              </div>
-                              <div class="flex gap-4">
-                                  <a href="#"
-                                      class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
-                                      onclick="event.preventDefault();" aria-disabled="true">
-                                      <i class="fa-brands fa-github mr-2"></i>
-                                      Code (Private)
-                                  </a>
-                              </div>
-                          </div>
-                      </article>
+                <!-- NEW Project Card: Mobica Find -->
+                <article
+                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 relative">
+                        <img src="assets/mobica_find.png" alt="Mobica Find- AI-Powered Product Search System"
+                            class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Mobica+Find';"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Mobica Find - AI Product Search</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                            AI-powered search to help sales teams find similar furniture products based on an image or
+                            description.
+                        </p>
+                        <div class="flex flex-wrap gap-2 my-6">
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">AI</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Similarity
+                                Search</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Multimodal</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">ALIGN</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">FAISS</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Vector
+                                DB</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                onclick="event.preventDefault();" aria-disabled="true">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code (Private)
+                            </a>
+                        </div>
+                    </div>
+                </article>
                 <!-- Project Card 2 -->
                 <article
                     class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     <div class="h-48 relative">
-                        <img src="assets/MisrLeX.png" alt="RAG Platform" class="w-full h-full object-cover"
+                        <img src="assets/MisrLex.png" alt="RAG Platform" class="w-full h-full object-cover"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=RAG+Platform';"
                             loading="lazy">
                         <div class="absolute inset-0 bg-black/20"></div>
@@ -332,7 +367,7 @@
                         </div>
                     </div>
                 </article>
-                
+
                 <!-- Project Card 3 -->
                 <article
                     class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -383,7 +418,8 @@
                 <article
                     class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     <div class="h-48 relative">
-                        <img src="assets/adventure_works.png" alt="Power BI Sales Dashboard" class="w-full h-full object-cover"
+                        <img src="assets/adventure_works.png" alt="Power BI Sales Dashboard"
+                            class="w-full h-full object-cover"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Power+BI+Dashboard';"
                             loading="lazy">
                         <div class="absolute inset-0 bg-black/20"></div>
@@ -391,19 +427,24 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-4">Power BI Sales Dashboard</h3>
                         <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
-                            Interactive sales performance dashboard, built in Power BI, visualizes key insights through advanced DAX measures and a comprehensive, optimized data model.
+                            Interactive sales performance dashboard, built in Power BI, visualizes key insights through
+                            advanced DAX measures and a comprehensive, optimized data model.
                         </p>
                         <div class="flex flex-wrap gap-2 my-6">
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Power BI</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Power
+                                BI</span>
                             <span
                                 class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">DAX</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data Modeling</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data
+                                Modeling</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Business Intelligence (BI)</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Business
+                                Intelligence (BI)</span>
                             <span
-                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data Visualization</span>
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Data
+                                Visualization</span>
                         </div>
                         <div class="flex gap-4">
                             <a href="https://app.powerbi.com/view?r=eyJrIjoiNGYzOTU5ODktODI5Zi00OGNmLWJlN2ItYzMzMzI3NmVjNjQ3IiwidCI6IjJiNzczZDk5LWYyMjktNDcwNC1iNTYyLTVhMzE5ODgzMTc3OSIsImMiOjh9"
@@ -416,26 +457,110 @@
                     </div>
                 </article>
 
+                <!-- Project Card 5: Real Estate Value Prediction -->
+                <article
+                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 relative">
+                        <img src="assets/house.png" alt="Real Estate Value Prediction"
+                            class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Real+Estate+Prediction';"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Real Estate Value Prediction</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                            An end-to-end machine learning system to predict real estate values using XGBoost and
+                            microservices architecture.
+                        </p>
+                        <div class="flex flex-wrap gap-2 my-6">
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Python</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">XGBoost</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Microservices</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Docker</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                onclick="event.preventDefault();" aria-disabled="true">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code (Soon)
+                            </a>
+                            <a href="https://housing-regression-mlops-e7qfaoy.gamma.site/"
+                                class="flex items-center text-primary hover:text-blue-600 transition-colors"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-globe mr-2"></i>
+                                Project Details
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 6: Customer Churn Prediction -->
+                <article
+                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 relative">
+                        <img src="assets/churn.png" alt="Customer Churn Prediction" class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Customer+Churn';"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Customer Churn Prediction</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
+                            An end-to-end machine learning system to forecast customer attrition using automated CI/CD
+                            pipelines and cloud deployment.
+                        </p>
+                        <div class="flex flex-wrap gap-2 my-6">
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Python</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">CI/CD</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">Cloud</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary text-gray-600 dark:text-gray-400 rounded-full text-sm">MLOps</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                onclick="event.preventDefault();" aria-disabled="true">
+                                <i class="fa-brands fa-github mr-2"></i>
+                                Code (Soon)
+                            </a>
+                            <a href="https://churn-prediction-system-hf08rj9.gamma.site/"
+                                class="flex items-center text-primary hover:text-blue-600 transition-colors"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-globe mr-2"></i>
+                                Project Details
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- 
                   "WORK IN PROGRESS" CARD
                   This card uses a pulse animation to create a "skeleton loader" effect.
                 -->
-                <article
-                    class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden relative">
+                <article class="bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden relative">
                     <!-- "In Progress" Badge -->
-                    <div class="absolute top-4 right-4 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium z-10">
+                    <div
+                        class="absolute top-4 right-4 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium z-10">
                         In Progress
                     </div>
-                    
+
                     <div class="p-6">
                         <!-- Pulsing Skeleton Content -->
                         <div class="animate-pulse">
                             <!-- Image Placeholder -->
                             <div class="h-48 bg-gray-200 dark:bg-dark-background-secondary rounded-md"></div>
-                            
+
                             <!-- Title Placeholder -->
-                            <div class="h-6 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-3/4 mt-6 mb-4"></div>
-                            
+                            <div class="h-6 bg-gray-200 dark:bg-dark-background-secondary rounded-full w-3/4 mt-6 mb-4">
+                            </div>
+
                             <!-- Description Placeholder -->
                             <div class="space-y-3 mb-6">
                                 <div class="h-4 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
@@ -448,7 +573,7 @@
                                 <div class="h-6 w-24 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
                                 <div class="h-6 w-16 bg-gray-200 dark:bg-dark-background-secondary rounded-full"></div>
                             </div>
-                            
+
                             <!-- Button Placeholder -->
                             <div class="h-8 w-28 bg-gray-200 dark:bg-dark-background-secondary rounded-md"></div>
                         </div>
@@ -462,7 +587,8 @@
                                 New AI Project (Coming Soon)
                             </h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-4 h-16">
-                                Currently in development. End To End Deep Learning Project Using MLOPS, DVC Pipeline With Deployments Azure And AWS. Stay tuned!
+                                Currently in development. End To End Deep Learning Project Using MLOPS, DVC Pipeline
+                                With Deployments Azure And AWS. Stay tuned!
                             </p>
                             <!-- You can keep the real tags hidden or show them like this -->
                             <div class="flex flex-wrap gap-2 my-6 opacity-0">
@@ -471,7 +597,7 @@
                                 <span class="px-3 py-1 rounded-full text-sm">Tag2</span>
                                 <span class="px-3 py-1 rounded-full text-sm">Tag3</span>
                             </div>
-                            
+
                             <div class="flex gap-4">
                                 <a href="#"
                                     class="flex items-center text-gray-400 dark:text-gray-600 cursor-not-allowed"
@@ -505,7 +631,8 @@
     </footer>
 
     <!-- Back to Top Button (identical to index.html) -->
-    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-300 hover:bg-blue-600">
+    <button id="backToTop"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-300 hover:bg-blue-600">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
@@ -575,7 +702,7 @@
             mobileLinks.forEach(link => {
                 link.addEventListener('click', close);
             });
-            
+
             // --- Header Scroll Shadow ---
             const header = document.getElementById('pageHeader');
             window.addEventListener('scroll', () => {
@@ -588,15 +715,15 @@
 
             // --- Back to Top Button ---
             const backToTop = document.getElementById('backToTop');
-            
+
             window.addEventListener('scroll', () => {
-                 if (window.scrollY > 300) {
+                if (window.scrollY > 300) {
                     backToTop.classList.remove('opacity-0', 'translate-y-4');
                     backToTop.classList.add('opacity-100', 'translate-y-0');
-                 } else {
+                } else {
                     backToTop.classList.remove('opacity-100', 'translate-y-0');
                     backToTop.classList.add('opacity-0', 'translate-y-4');
-                 }
+                }
             });
 
             backToTop.addEventListener('click', () => {
@@ -611,4 +738,3 @@
 </body>
 
 </html>
-
